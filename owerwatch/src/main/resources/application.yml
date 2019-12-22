@@ -3,7 +3,7 @@ spring:
     # 数据库用户名
     name: root
     # 数据库密码
-    password:
+    password: fanjianglong
     # 数据库地址
     url: jdbd:mysql://127.0.0.1:3306/owerwatch_league
     # 数据库驱动
