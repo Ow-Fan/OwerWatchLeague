@@ -28,48 +28,41 @@ public class ResponseBean implements Serializable {
      */
     private Object data;
 
-    public ResponseBean responseSuccess() {
-        this.setSucceed(true);
-        this.setData(null);
-        this.setMessage("Operation succeed!");
-        return this;
+    private ResponseBean() {
     }
 
-    public ResponseBean responseSuccess(String message) {
+    public static ResponseBean getInstance() {
+        return new ResponseBean();
+    }
+
+    public void success() {
         this.setSucceed(true);
-        this.setData(null);
+        this.setMessage("Operation success!");
+    }
+
+    public ResponseBean success(String message) {
+        this.success();
         this.setMessage(message);
         return this;
     }
 
-    public ResponseBean responseSuccess(String message, Object data) {
-        this.setSucceed(true);
+    public void success(String message, Object data) {
+        this.success(message);
         this.setData(data);
+    }
+
+    public void fail() {
+        this.setSucceed(false);
+        this.setMessage("Operation failed!");
+    }
+
+    public void fail(String message) {
+        this.fail();
         this.setMessage(message);
-        return this;
     }
 
-    public ResponseBean responseFail() {
-        this.setSucceed(false);
-        this.setData(null);
-        this.setMessage("Operation fail!");
-        return this;
-    }
-
-    public ResponseBean responseFail(String message) {
-        this.setSucceed(false);
-        this.setData(null);
-        this.setMessage(message);
-        return this;
-    }
-
-    public ResponseBean responseFail(String message, Object data) {
-        this.setSucceed(false);
+    public void fail(String message, Object data) {
+        this.fail(message);
         this.setData(data);
-        this.setMessage(message);
-        return this;
-    }
-
-    public ResponseBean() {
     }
 }

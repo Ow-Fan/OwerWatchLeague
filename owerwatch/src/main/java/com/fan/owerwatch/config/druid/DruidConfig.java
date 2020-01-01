@@ -40,7 +40,6 @@ public class DruidConfig {
         return servletRegistrationBean;
     }
 
-
     /**
      * 注册过滤器
      * @return FilterRegistrationBean
